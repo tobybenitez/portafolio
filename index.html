@@ -1,355 +1,711 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Portafolio</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
+
       font-family: 'Segoe UI', sans-serif;
+
       line-height: 1.6;
+
       transition: background-color 0.3s, color 0.3s;
+
       background: linear-gradient(135deg, #6a4c9c, #3b2a61); 
+
       background-size: 20px 20px;
+
       color: white;
+
       position: relative;
+
     }
+
     body.dark-mode {
+
       background: linear-gradient(135deg, #2e1a47, #3b2a61);
+
     }
+
     .top-bar {
+
       background-color: #4f46e5;
+
       color: #fff;
+
       padding: 10px 20px;
+
       position: fixed;
+
       width: 100%;
+
       top: 0;
+
       left: 0;
+
       z-index: 1000;
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
     }
+
     .top-bar select, .top-bar button {
+
       background: #fff;
+
       border: none;
+
       padding: 5px 15px;
+
       font-size: 14px;
+
       cursor: pointer;
+
       color: #333;
+
       border-radius: 5px;
+
     }
+
     .top-bar button {
+
       background-color: #fff;
+
       color: #4f46e5;
+
     }
+
     .top-bar select, .top-bar button:hover {
+
       background-color: #4f46e5;
+
       color: white;
+
     }
+
     header {
+
       text-align: center;
+
       padding: 60px 20px 40px;
+
       border-bottom: 2px solid #4f46e5;
+
       background-color: rgba(12, 9, 9, 0.9);
+
       border-radius: 10px;
+
     }
+
     body.dark-mode header {
+
       background-color: rgba(15, 14, 14, 0.9);
+
     }
+
     header h1 {
+
       font-size: 32px;
+
       margin: 10px 0;
+
     }
+
     header p {
+
       font-size: 18px;
+
       opacity: 0.7;
+
     }
+
     .sobre-mi {
+
       padding: 30px;
+
       margin: 0 20px;
+
       border-radius: 12px;
+
       background-color: rgba(10, 8, 8, 0.9);
+
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
     }
+
     body.dark-mode .sobre-mi {
+
       background-color: rgba(8, 7, 7, 0.9);
+
       color: #f4f7fa;
+
     }
+
     .sobre-mi h2 {
+
       margin-bottom: 20px;
+
       font-size: 28px;
+
       border-bottom: 3px solid #4f46e5;
+
       padding-bottom: 10px;
+
     }
+
     .tecnologias {
+
       text-align: center;
+
       margin: 40px 0;
+
     }
+
     .tecnologias i {
+
       font-size: 50px;
+
       margin: 0 20px;
+
       color: #aaa;
+
       transition: color 0.3s;
+
     }
+
     .tecnologias i:hover {
+
       color: #4f46e5;
+
     }
+
     .tecnologias .fa-html5 { color: #e34c26; }
+
     .tecnologias .fa-css3-alt { color: #264de4; }
+
     .tecnologias .fa-js { color: #f7df1e; }
+
     .tecnologias .fa-php { color: #777bb4; }
+
     .tecnologias .fa-python { color: #306998; }
+
     .tecnologias .fab.fa-java { color: #007396; }
+
     .tecnologias hr {
+
       margin-top: 20px;
+
       border: 0;
+
       border-top: 2px solid #4f46e5;
+
       width: 80%;
+
       margin-left: 10%;
+
     }
+
     .proyectos {
+
       margin-top: 60px;
+
     }
+
     .proyectos h2 {
+
       text-align: center;
+
       margin-bottom: 40px;
+
       font-size: 28px;
+
       border-bottom: 3px solid #4f46e5;
+
       padding-bottom: 10px;
+
     }
+
     .grid-proyectos {
+
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 20px;
+
     }
+
     .proyecto {
+
       background: #0e0a0a;
+
       border-radius: 10px;
+
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
       overflow: hidden;
+
       transition: transform 0.2s, box-shadow 0.2s;
+
     }
+
     body.dark-mode .proyecto {
+
       background: #080808;
+
       color: #f4f7fa;
+
     }
+
     .proyecto:hover {
+
       transform: translateY(-5px);
+
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+
     }
+
     .proyecto img {
+
       width: 100%;
+
       height: auto;
+
       object-fit: cover;
+
     }
+
     .proyecto-info {
+
       padding: 15px;
+
     }
+
     .proyecto-info h3 {
+
       font-size: 20px;
+
       margin-bottom: 10px;
+
     }
+
     .proyecto-info p {
+
       font-size: 14px;
+
       margin-bottom: 10px;
+
     }
+
     .proyecto-info a {
+
       color: #4f46e5;
+
       text-decoration: none;
+
       font-weight: bold;
+
     }
+
     .proyecto-info a:hover {
+
       text-decoration: underline;
+
     }
+
     .contacto {
+
       text-align: center;
+
       margin-top: 60px;
+
     }
+
     .contacto h2 {
+
       margin-bottom: 30px;
+
       font-size: 28px;
+
       border-bottom: 3px solid #4f46e5;
+
       padding-bottom: 10px;
+
     }
+
     .info-contacto {
+
       display: flex;
+
       justify-content: center;
+
       gap: 20px;
+
       flex-wrap: wrap;
+
       font-size: 18px;
+
     }
+
     .info-contacto div {
+
       display: flex;
+
       align-items: center;
+
       gap: 10px;
+
       background: #080707;
+
       padding: 12px 20px;
+
       border-radius: 8px;
+
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+
       transition: transform 0.2s, background 0.3s;
+
     }
+
     body.dark-mode .info-contacto div {
+
       background: #333;
+
       color: #0f1214;
+
     }
+
     .info-contacto div:hover {
+
       transform: translateY(-3px);
+
       background: #4f46e5;
+
       color: rgb(8, 8, 8);
+
     }
+
     .info-contacto i {
+
       font-size: 22px;
+
       color: #4f46e5;
+
     }
+
     body.dark-mode .info-contacto i {
+
       color: rgb(17, 13, 13);
+
     }
+
     .info-contacto div:hover i {
+
       color: rgb(8, 5, 5);
+
     }
+
     footer {
+
       text-align: center;
+
       padding: 20px;
+
       background: #4f46e5;
+
       font-size: 14px;
+
       color: #555;
+
       border-top: 2px solid rgb(7, 5, 7);
+
     }
+
     body.dark-mode footer {
+
       background: #333;
+
       color: #0c0d0e;
+
     }
+
   </style>
+
 </head>
+
 <body>
+
   <div class="top-bar">
+
     <select id="languageSelect" onchange="changeLanguage()">
+
       <option value="es">Español</option>
+
       <option value="en">English</option>
+
     </select>
+
   </div>
+
   <header>
+
     <h1 id="name">Benitez Tobias</h1>
+
     <p id="profession">Desarrollador Web en formación</p>
+
   </header>
+
   <section class="sobre-mi">
+
     <h2 id="aboutTitle">Sobre mí</h2>
+
     <p id="aboutText">Estoy formándome como desarrollador web y ya realicé varios proyectos usando HTML, CSS, JavaScript y PHP. Me interesa crear sitios funcionales, bien estructurados y seguir aprendiendo nuevas tecnologías para mejorar como programador.</p>
+
   </section>
+
   <section class="tecnologias">
+
     <h2>Tecnologías</h2>
+
     <hr />
+
     <i class="fab fa-html5"></i>
+
     <i class="fab fa-css3-alt"></i>
+
     <i class="fab fa-js"></i>
+
     <i class="fab fa-php"></i>
+
     <i class="fab fa-python"></i>
+
     <i class="fab fa-java"></i>
+
   </section>
+
   <section class="proyectos">
+
     <h2 id="projectsTitle">Proyectos</h2>
+
     <div class="grid-proyectos">
+
       <div class="proyecto">
+
         <img src="img/cap.png" alt="Proyecto 1">
+
         <div class="proyecto-info">
+
           <h3 id="project1Title">Recetario Online</h3>
-          <p id="project1Desc">Esta landing page muestra un recetario online sencillo e intuitivo, con instrucciones paso a paso para gestionar tus medicamentos sin complicaciones. Es solo un ejemplo, no es funcional, y fue creada para ayudar a un compañero a visualizar cómo podría iniciar su tesis y desarrollar su proyecto.</p>
+
+          <p id="project1Desc">Esta landing page muestra un recetario online sencillo e intuitivo, con instrucciones paso a paso para gestionar tus medicamentos sin complicaciones.
+
+Es solo un ejemplo, no es funcional, y fue creada para ayudar a un compañero a visualizar cómo podría iniciar su tesis y desarrollar su proyecto.</p>
+
           <a href="https://tobybenitez.github.io/leantejado/" target="_blank" id="project1Link">Ver proyecto</a>
+
         </div>
+
       </div>
+
       <div class="proyecto">
+
         <img src="img/cap2.png" alt="Proyecto 2">
+
         <div class="proyecto-info">
+
           <h3 id="project2Title">FutbolStats</h3>
+
           <p id="project2Desc">FútbolStats es una base de datos diseñada para la administración y el análisis integral de la información de un equipo deportivo, con un enfoque principal en el fútbol. El sistema busca centralizar y facilitar tanto la gestión técnica, como el análisis del rendimiento colectivo e individual de los jugadores.</p>
+
           <a href="https://bringfeel.github.io/FutbolStats/" target="_blank" id="project2Link">Ver proyecto</a>
+
         </div>
+
       </div>
+
       <div class="proyecto">
+
         <img src="img/cap3.png" alt="Proyecto 3">
+
         <div class="proyecto-info">
+
           <h3 id="project3Title">informacion sobre el tenis</h3>
+
           <p id="project3Desc">Todo lo que necesitas saber sobre tenis en un solo sitio. Se trata de una landing page con varias secciones que ofrecen información completa sobre el deporte, sus reglas, técnicas y curiosidades.</p>
+
           <a href="https://tobybenitez.github.io/tenis/" target="_blank" id="project3Link">Ver proyecto</a>
+
         </div>
+
       </div>
+
       <div class="proyecto">
+
         <img src="img/cap4.png" alt="Proyecto 4">
+
         <div class="proyecto-info">
+
           <h3 id="project4Title">recicnet</h3>
+
           <p id="project4Desc">Mi proyecto de tesis consiste en una página web donde comercios y empresas pueden vender sus residuos reciclables.</p>
+
           <a href="https://recicnet.gonzanetwork.net.ar/" target="_blank" id="project4Link">Ver proyecto</a>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
+
   <section class="contacto">
+
     <h2>Contacto</h2>
+
     <div class="info-contacto">
+
       <div><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/toby-benitez-9859b7364" target="_blank">LinkedIn</a></div>
+
       <div><i class="fas fa-envelope"></i><a href="https://tobiasbenitez525@gmail.com">Correo</a></div>
+
       <div><i class="fab fa-instagram"></i><a href="https://www.instagram.com/tobybz._/" target="_blank">Instagram</a></div>
+
       <div><i class="fab fa-github"></i><a href="https://github.com/tobybenitez" target="_blank">GitHub</a></div>
+
     </div>
+
   </section>
+
  
+
   <script>
+
     function changeLanguage() {
+
       const language = document.getElementById('languageSelect').value;
+
       const translations = {
+
         es: {
+
           name: 'Benitez Tobias',
+
           profession: 'Desarrollador Web en formación',
+
           aboutTitle: 'Sobre mí',
+
           aboutText: 'Estoy formándome como desarrollador web y ya realicé varios proyectos usando HTML, CSS, JavaScript y PHP. Me interesa crear sitios funcionales, bien estructurados y seguir aprendiendo nuevas tecnologías para mejorar como programador.',
+
           projectsTitle: 'Proyectos',
+
           project1Title: 'Recetario Online',
-          project1Desc: 'Esta landing page muestra un recetario online sencillo e intuitivo, con instrucciones paso a paso para gestionar tus medicamentos sin complicaciones. Es solo un ejemplo, no es funcional, y fue creada para ayudar a un compañero a visualizar cómo podría iniciar su tesis y desarrollar su proyecto.',
-          project2Title: 'FutbolStats',
-          project2Desc: 'FútbolStats es una base de datos diseñada para la administración y el análisis integral de la información de un equipo deportivo, con un enfoque principal en el fútbol. El sistema busca centralizar y facilitar tanto la gestión técnica, como el análisis del rendimiento colectivo e individual de los jugadores.',
-          project3Title: 'informacion sobre el tenis',
-          project3Desc: 'Todo lo que necesitas saber sobre tenis en un solo sitio. Se trata de una landing page con varias secciones que ofrecen información completa sobre el deporte, sus reglas, técnicas y curiosidades.',
-          project4Title: 'recicnet',
-          project4Desc: 'Mi proyecto de tesis consiste en una página web donde comercios y empresas pueden vender sus residuos reciclables.',
+
+          project1Desc: 'Sistema de recetarios online fácil de usar, con una interfaz clara, paso a paso, y optimizada para que puedas acceder a tus medicamentos sin estrés.',
+
+          project2Title: 'EVENTUM',
+
+          project2Desc: 'Organización de eventos online. Registra tus eventos de manera práctica y visualiza todos los datos fácilmente.',
+
+          project3Title: 'Tienda en línea',
+
+          project3Desc: 'Tienda en línea para productos de tecnología, con un carrito de compras y opción de pago integrado.',
+
+          project4Title: 'Blog Personal',
+
+          project4Desc: 'Blog personal con artículos sobre tecnología, desarrollo y estilo de vida.',
+
           contacto: 'Contacto',
+
         },
+
         en: {
+
           name: 'Benitez Tobias',
+
           profession: 'Web Developer in training',
+
           aboutTitle: 'About Me',
+
           aboutText: 'I am training as a web developer and have already completed several projects using HTML, CSS, JavaScript, and PHP. I am interested in creating functional, well-structured websites and continuing to learn new technologies to improve as a programmer.',
+
           projectsTitle: 'Projects',
+
           project1Title: 'Online Recipe Book',
-          project1Desc: 'This landing page displays a simple and intuitive online recipe book, with step-by-step instructions for managing your medications without complications. It is just an example, it is not functional, and it was created to help a classmate visualize how they could start their thesis and develop their project.',
-          project2Title: 'FutbolStats',
-          project2Desc: 'FútbolStats is a database designed for the administration and comprehensive analysis of a sports team\'s information, with a main focus on football. The system seeks to centralize and facilitate both technical management and the analysis of collective and individual player performance.',
-          project3Title: 'Information about tennis',
-          project3Desc: 'Everything you need to know about tennis in one place. It is a landing page with several sections that offer complete information about the sport, its rules, techniques, and interesting facts.',
-          project4Title: 'recicnet',
-          project4Desc: 'My thesis project consists of a website where businesses and companies can sell their recyclable waste.',
+
+          project1Desc: 'An easy-to-use online recipe system with a clear, step-by-step interface that helps you access your medication with ease.',
+
+          project2Title: 'EVENTUM',
+
+          project2Desc: 'Online event management system. Register your events in a practical way and visualize all the data easily.',
+
+          project3Title: 'Online Store',
+
+          project3Desc: 'An online store for tech products with a shopping cart and integrated payment options.',
+
+          project4Title: 'Personal Blog',
+
+          project4Desc: 'Personal blog with articles about technology, development, and lifestyle.',
+
           contacto: 'Contact',
+
         }
+
       };
+
       const lang = translations[language];
 
+
+
       document.getElementById('name').textContent = lang.name;
+
       document.getElementById('profession').textContent = lang.profession;
+
       document.getElementById('aboutTitle').textContent = lang.aboutTitle;
+
       document.getElementById('aboutText').textContent = lang.aboutText;
+
       document.getElementById('projectsTitle').textContent = lang.projectsTitle;
+
       document.getElementById('project1Title').textContent = lang.project1Title;
+
       document.getElementById('project1Desc').textContent = lang.project1Desc;
+
       document.getElementById('project2Title').textContent = lang.project2Title;
+
       document.getElementById('project2Desc').textContent = lang.project2Desc;
+
       document.getElementById('project3Title').textContent = lang.project3Title;
+
       document.getElementById('project3Desc').textContent = lang.project3Desc;
+
       document.getElementById('project4Title').textContent = lang.project4Title;
+
       document.getElementById('project4Desc').textContent = lang.project4Desc;
+
       document.querySelector('.contacto h2').textContent = lang.contacto;
+
     }
+
   </script>
+
 </body>
+
 </html>
