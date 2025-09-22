@@ -258,7 +258,6 @@
           <h3 id="project1Title">Recetario Online</h3>
           <p id="project1Desc">Esta landing page muestra un recetario online sencillo e intuitivo, con instrucciones paso a paso para gestionar tus medicamentos sin complicaciones.
 Es solo un ejemplo, no es funcional, y fue creada para ayudar a un compañero a visualizar cómo podría iniciar su tesis y desarrollar su proyecto.</p>
-          <a href="https://tobybenitez.github.io/leantejado/" target="_blank" id="project1Link">Ver proyecto</a>
         </div>
       </div>
       <div class="proyecto">
@@ -266,7 +265,6 @@ Es solo un ejemplo, no es funcional, y fue creada para ayudar a un compañero a 
         <div class="proyecto-info">
           <h3 id="project2Title">FutbolStats</h3>
           <p id="project2Desc">FútbolStats es una base de datos diseñada para la administración y el análisis integral de la información de un equipo deportivo, con un enfoque principal en el fútbol. El sistema busca centralizar y facilitar tanto la gestión técnica, como el análisis del rendimiento colectivo e individual de los jugadores.</p>
-          <a href="https://bringfeel.github.io/FutbolStats/" target="_blank" id="project2Link">Ver proyecto</a>
         </div>
       </div>
       <div class="proyecto">
@@ -274,7 +272,6 @@ Es solo un ejemplo, no es funcional, y fue creada para ayudar a un compañero a 
         <div class="proyecto-info">
           <h3 id="project3Title">informacion sobre el tenis</h3>
           <p id="project3Desc">Todo lo que necesitas saber sobre tenis en un solo sitio. Se trata de una landing page con varias secciones que ofrecen información completa sobre el deporte, sus reglas, técnicas y curiosidades.</p>
-          <a href="https://tobybenitez.github.io/tenis/" target="_blank" id="project3Link">Ver proyecto</a>
         </div>
       </div>
       <div class="proyecto">
@@ -282,7 +279,6 @@ Es solo un ejemplo, no es funcional, y fue creada para ayudar a un compañero a 
         <div class="proyecto-info">
           <h3 id="project4Title">recicnet</h3>
           <p id="project4Desc">Mi proyecto de tesis consiste en una página web donde comercios y empresas pueden vender sus residuos reciclables.</p>
-          <a href="https://recicnet.gonzanetwork.net.ar/" target="_blank" id="project4Link">Ver proyecto</a>
         </div>
       </div>
     </div>
@@ -291,8 +287,7 @@ Es solo un ejemplo, no es funcional, y fue creada para ayudar a un compañero a 
     <h2>Contacto</h2>
     <div class="info-contacto">
       <div><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/toby-benitez-9859b7364" target="_blank">LinkedIn</a></div>
-      <div><i class="fas fa-envelope"></i><a href="https://tobiasbenitez525@gmail.com">Correo</a></div>
-      <div><i class="fab fa-instagram"></i><a href="https://www.instagram.com/tobybz._/" target="_blank">Instagram</a></div>
+      <div><i class="fas fa-envelope"></i><a href="mailto:tobiasbenitez525@gmail.com">Correo</a></div>       <div><i class="fab fa-instagram"></i><a href="https://www.instagram.com/tobybz._/" target="_blank">Instagram</a></div>
       <div><i class="fab fa-github"></i><a href="https://github.com/tobybenitez" target="_blank">GitHub</a></div>
     </div>
   </section>
@@ -308,13 +303,12 @@ Es solo un ejemplo, no es funcional, y fue creada para ayudar a un compañero a 
           aboutText: 'Estoy formándome como desarrollador web y ya realicé varios proyectos usando HTML, CSS, JavaScript y PHP. Me interesa crear sitios funcionales, bien estructurados y seguir aprendiendo nuevas tecnologías para mejorar como programador.',
           projectsTitle: 'Proyectos',
           project1Title: 'Recetario Online',
-          project1Desc: 'Esta landing page muestra un recetario online sencillo e intuitivo, con instrucciones paso a paso para gestionar tus medicamentos sin complicaciones.
-Es solo un ejemplo, no es funcional, y fue creada para ayudar a un compañero a visualizar cómo podría iniciar su tesis y desarrollar su proyecto.',
+          project1Desc: 'Esta landing page muestra un recetario online sencillo e intuitivo, con instrucciones paso a paso para gestionar tus medicamentos sin complicaciones. Es solo un ejemplo, no es funcional, y fue creada para ayudar a un compañero a visualizar cómo podría iniciar su tesis y desarrollar su proyecto.',
           project2Title: 'FutbolStats',
           project2Desc: 'FútbolStats es una base de datos diseñada para la administración y el análisis integral de la información de un equipo deportivo, con un enfoque principal en el fútbol. El sistema busca centralizar y facilitar tanto la gestión técnica, como el análisis del rendimiento colectivo e individual de los jugadores.',
-          project3Title: 'informacion sobre el tenis',
+          project3Title: 'Información sobre el tenis',
           project3Desc: 'Todo lo que necesitas saber sobre tenis en un solo sitio. Se trata de una landing page con varias secciones que ofrecen información completa sobre el deporte, sus reglas, técnicas y curiosidades.',
-          project4Title: 'recicnet',
+          project4Title: 'Recicnet',
           project4Desc: 'Mi proyecto de tesis consiste en una página web donde comercios y empresas pueden vender sus residuos reciclables.',
           contacto: 'Contacto',
         },
@@ -330,7 +324,7 @@ Es solo un ejemplo, no es funcional, y fue creada para ayudar a un compañero a 
           project2Desc: 'FútbolStats is a database designed for the administration and comprehensive analysis of a sports team\'s information, with a main focus on football. The system seeks to centralize and facilitate both technical management and the analysis of collective and individual player performance.',
           project3Title: 'Information about tennis',
           project3Desc: 'Everything you need to know about tennis in one place. It is a landing page with several sections that offer complete information about the sport, its rules, techniques, and interesting facts.',
-          project4Title: 'recicnet',
+          project4Title: 'Recicnet',
           project4Desc: 'My thesis project consists of a website where businesses and companies can sell their recyclable waste.',
           contacto: 'Contact',
         }
@@ -352,6 +346,11 @@ Es solo un ejemplo, no es funcional, y fue creada para ayudar a un compañero a 
       document.getElementById('project4Desc').textContent = lang.project4Desc;
       document.querySelector('.contacto h2').textContent = lang.contacto;
     }
+
+    // Llamar a changeLanguage al cargar la página para asegurar que el idioma inicial se muestre correctamente
+    document.addEventListener('DOMContentLoaded', () => {
+        changeLanguage();
+    });
   </script>
 </body>
 </html>
